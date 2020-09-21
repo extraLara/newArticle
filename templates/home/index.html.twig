@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+
+
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                {% if app.user %}
+                    <p class="text-lead">Bonjour & Bienvenue {{ app.user.username }}</p>
+                    {% else %}
+                    <p class="text-lead">Vous n'etes pas connecte</p>
+                    <hr>
+                        <i>Ajouter ces informations dans la table #app_users
+                        <ul>
+                            <li>username : admin</li>
+                            <li>password : $2a$08$jHZj/wJfcVKlIwr5AvR78euJxYK7Ku5kURNhNx.7.CSIJ3Pq6LEPC</li>
+                            <li>mail : admin@example.com</li>
+                            <li>is_active : 1</li>
+                        </ul>
+                        </i>
+                    <hr>
+                        <p>Pour vous connecter</p>
+                        <ul>
+                            <li>Mail : admin@example.com</li>
+                            <li>Password : admin</li>
+                        </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
